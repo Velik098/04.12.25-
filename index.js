@@ -9,7 +9,7 @@ console.log(getStringLength('abc'));
 console.log(getStringLength(''));
 
 
-const getStringFromTemplate = (firstName, lastName) => Hello, ${firstName} ${lastName}!; // Реализуйте функцию getStringFromTemplate, которая принимает параметры firstName и lastName  и возвращает результат подстановки этих значений в строку-шаблон 'Hello, firstName  lastName!'. Важно: используйте интерполяцию (шаблонные строки) для формирования результата, а не операцию конкатенации.
+const getStringFromTemplate = (firstName, lastName) => `Hello, ${firstName} ${lastName}!`; // Реализуйте функцию getStringFromTemplate, которая принимает параметры firstName и lastName  и возвращает результат подстановки этих значений в строку-шаблон 'Hello, firstName  lastName!'. Важно: используйте интерполяцию (шаблонные строки) для формирования результата, а не операцию конкатенации.
 console.log(getStringFromTemplate('John', 'Doe'));
 console.log(getStringFromTemplate('Chuck', 'Norris'));
 
