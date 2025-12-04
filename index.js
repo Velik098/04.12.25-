@@ -26,7 +26,6 @@ console.log(removeFirstOccurrences('ABABAB', 'BA'));
 
 
 
-
 const getRectangleString = (w, h) => // Реализуйте функцию getRectangleString, которая  возвращает строковое представление прямоугольника с заданной шириной и высотой, используя символы
     (w < 2 || h < 2) 
         ? '*'.repeat(w) 
