@@ -1,35 +1,70 @@
-const concatenateStrings = (a, b) => (a + b).replace(/ /g, ''); // Реализуйте функцию concatenateStrings, которая принимает две строки в качестве аргументов, возвращает результат  их конкатенации и удаляет все пробелы.
-console.log(concatenateStrings('aa', 'bb')); 
-console.log(concatenateStrings('aa', ' '));
-console.log(concatenateStrings('', 'bb'));
+// 1
+const containsChar = (str, ch) => {
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === ch) return true;
+  }
+  return false;
+};
+
+console.log(containsChar('hello', 'e'));
+console.log(containsChar('world', 'z'));
+console.log(containsChar('Hello', 'h'));
 
 
-const getStringLength = str => str.length; // Реализуйте функцию getStringLength, которая принимает строку в качестве аргумента и возвращает ее длину.
-console.log(getStringLength('abc'));
-console.log(getStringLength(''));
+// 2
+const reverse = (text) => {
+  let result = '';
+  for (let i = text.length - 1; i >= 0; i--) {
+    result += text[i];
+  }
+  return result;
+};
+
+console.log(reverse('listen'));
+console.log(reverse('hello'));
 
 
-const getStringFromTemplate = (firstName, lastName) => `Hello, ${firstName} ${lastName}!`; // Реализуйте функцию getStringFromTemplate, которая принимает параметры firstName и lastName  и возвращает результат подстановки этих значений в строку-шаблон 'Hello, firstName  lastName!'. Важно: используйте интерполяцию (шаблонные строки) для формирования результата, а не операцию конкатенации.
-console.log(getStringFromTemplate('John', 'Doe'));
-console.log(getStringFromTemplate('Chuck', 'Norris'));
+// 3
+const wordsToRegister = (str) => {
+  let output = '';
+  for (let i = 0; i < str.length; i++) {
+    output += i % 2 === 0
+      ? str[i].toLowerCase()
+      : str[i].toUpperCase();
+  }
+  return output;
+};
+
+console.log(wordsToRegister('hello'));
+console.log(wordsToRegister('test test'));
 
 
-const getChar = (str, index) => str[index - 1]; // Реализуйте функцию getChar, которая принимает строку и порядковый номер символа в строке и возвращает символ, соответствующий этому порядковому номеру.
-console.log(getChar('John Doe', 1));
-console.log(getChar('cat', 3));
+// 4
+const sumOfDigitsInString = (s) => {
+  let sum = 0;
+  for (const char of s) {
+    if (char >= '0' && char <= '9') {
+      sum += +char;
+    }
+  }
+  return sum;
+};
+
+console.log(sumOfDigitsInString('abc123'));
+console.log(sumOfDigitsInString('5 apples and 3 oranges'));
 
 
-const removeFirstOccurrences = (str, substr) => str.replace(substr, ''); // Реализуйте функцию removeFirstOccurrences, которая удаляет первое вхождение подстроки  внутри строки.
-console.log(removeFirstOccurrences('To be or not to be', 'not'));
-console.log(removeFirstOccurrences('I like legends', 'end'));
-console.log(removeFirstOccurrences('ABABAB', 'BA'));              
+// 5
+const checkChars = (str, from, to) => {
+  if (!str.includes(from)) return 'Error';
 
+  let updated = '';
+  for (let i = 0; i < str.length; i++) {
+    updated += str[i] === from ? to : str[i];
+  }
+  return updated;
+};
 
-
-const getRectangleString = (w, h) => // Реализуйте функцию getRectangleString, которая  возвращает строковое представление прямоугольника с заданной шириной и высотой, используя символы
-    (w < 2 || h < 2) 
-        ? '*'.repeat(w) 
-        : '*'.repeat(w) + '\n' 
-        + ('*' + ' '.repeat(w - 2) + '*\n').repeat(h - 2) 
-        + '*'.repeat(w);
-console.log(getRectangleString(5, 4));
+console.log(checkChars('Test!', '!', '?'));
+console.log(checkChars('Hello world', 'a', 'b'));
+console.log(checkChars('hexlet', 'e', 'o'));
